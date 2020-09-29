@@ -1,5 +1,9 @@
 <nav class="header-nav {% if site.scrollappear_enabled %}scrollappear{% endif %}">
-  <a href="{{ '/' | relative_url }}" class="header-logo" title="{{ site.name }}">{{ site.name }}</a>
+  <a href="{{ '/' | relative_url }}" class="header-logo" title="{{ site.name }}">
+    <ul>
+      <li class="first-name">{{ site.first_name }}</li><li class="last-name">{{ site.last_name }}</li>
+    </ul>
+  </a>
   <ul class="header-links">
     {% if site.about_enabled == true %}
       <li>
