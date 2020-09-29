@@ -14,54 +14,54 @@
   src: asset_url('cormorant-garamond/Cormorant-Garamond-700.eot');
   src:
     asset_url('cormorant-garamond/Cormorant-Garamond-700.eot?#iefix') format('embedded-opentype'),
-    local('Cormorant Garamond Medium'),
-    local('Cormorant-Garamond-600'),
+    local('Cormorant Garamond Bold'),
+    local('Cormorant-Garamond-700'),
     asset_url('cormorant-garamond/Cormorant-Garamond-700.woff2') format('woff2'),
     asset_url('cormorant-garamond/Cormorant-Garamond-700.woff') format('woff'),
     asset_url('cormorant-garamond/Cormorant-Garamond-700.ttf') format('truetype');
 }
 
-// Lato
+// Open Sans
 // =============================================================================
 
 @font-face {
-  font-family: 'Lato';
+  font-family: 'Open Sans';
   font-style: normal;
   font-weight: 300;
-  src: asset_url('lato/Lato-300.eot');
+  src: asset_url('open-sans/Open-Sans-300.eot');
   src:
-    asset_url('lato/Lato-300.eot?#iefix') format('embedded-opentype'),
-    local('Lato Light'),
-    local('Lato-300'),
-    asset_url('lato/Lato-300.woff2') format('woff2'),
-    asset_url('lato/Lato-300.woff') format('woff'),
-    asset_url('lato/Lato-300.ttf') format('truetype');
+    asset_url('open-sans/Open-Sans-300.eot?#iefix') format('embedded-opentype'),
+    local('Open Sans Light'),
+    local('Open-Sans-300'),
+    asset_url('open-sans/Open-Sans-300.woff2') format('woff2'),
+    asset_url('open-sans/Open-Sans-300.woff') format('woff'),
+    asset_url('open-sans/Open-Sans-300.ttf') format('truetype');
 }
 
 @font-face {
-  font-family: 'Lato';
+  font-family: 'Open Sans';
   font-style: normal;
   font-weight: 400;
-  src: asset_url('lato/Lato-regular.eot');
+  src: asset_url('open-sans/Open-Sans-regular.eot');
   src:
-    asset_url('lato/Lato-regular.eot?#iefix') format('embedded-opentype'),
-    local('Lato Regular'),
-    local('Lato-regular'),
-    asset_url('lato/Lato-regular.woff2') format('woff2'),
-    asset_url('lato/Lato-regular.woff') format('woff'),
-    asset_url('lato/Lato-regular.ttf') format('truetype');
+    asset_url('open-sans/Open-Sans-regular.eot?#iefix') format('embedded-opentype'),
+    local('Open Sans Regular'),
+    local('Open-Sans-regular'),
+    asset_url('open-sans/Open-Sans-regular.woff2') format('woff2'),
+    asset_url('open-sans/Open-Sans-regular.woff') format('woff'),
+    asset_url('open-sans/Open-Sans-regular.ttf') format('truetype');
 }
 
 @font-face {
-  font-family: 'Lato';
+  font-family: 'Open Sans';
   font-style: normal;
   font-weight: 700;
-  src: asset_url('lato/Lato-700.eot');
+  src: asset_url('open-sans/Open-Sans-700.eot');
   src:
-    asset_url('lato/Lato-700.eot?#iefix') format('embedded-opentype'),
-    local('Lato Bold'),
-    local('Lato-700'),
-    asset_url('lato/Lato-700.woff2') format('woff2'),
-    asset_url('lato/Lato-700.woff') format('woff'),
-    asset_url('lato/Lato-700.ttf') format('truetype');
+    asset_url('open-sans/Open-Sans-700.eot?#iefix') format('embedded-opentype'),
+    local('Open Sans Bold'),
+    local('Open-Sans-700'),
+    asset_url('open-sans/Open-Sans-700.woff2') format('woff2'),
+    asset_url('open-sans/Open-Sans-700.woff') format('woff'),
+    asset_url('open-sans/Open-Sans-700.ttf') format('truetype');
 }
