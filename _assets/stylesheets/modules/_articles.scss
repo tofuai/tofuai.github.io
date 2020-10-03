@@ -160,6 +160,14 @@
     display: block;
     margin-bottom: 30px;
   }
+  img.zooming {
+    margin: 0 auto;
+  }
+  figcaption {
+    margin: 0 auto;
+    text-align: center;
+    color: $gray-light;
+  }
   h2,
   h3,
   h4 {
@@ -203,11 +211,6 @@
       fill: $gray-dark;
     }
   }
-}
-
-.figure-caption {
-  margin: 0 auto;
-  text-align: center;
 }
 
 // Responsive
