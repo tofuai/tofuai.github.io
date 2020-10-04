@@ -55,6 +55,20 @@
 @font-face {
   font-family: 'Open Sans';
   font-style: normal;
+  font-weight: 600;
+  src: asset_url('open-sans/Open-Sans-600.eot');
+  src:
+    asset_url('open-sans/Open-Sans-600.eot?#iefix') format('embedded-opentype'),
+    local('Open Sans Bold'),
+    local('Open-Sans-600'),
+    asset_url('open-sans/Open-Sans-600.woff2') format('woff2'),
+    asset_url('open-sans/Open-Sans-600.woff') format('woff'),
+    asset_url('open-sans/Open-Sans-600.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
   font-weight: 700;
   src: asset_url('open-sans/Open-Sans-700.eot');
   src:

@@ -7,7 +7,7 @@
   margin: 0;
   margin: 30px 0;
   overflow: auto;
-  font-weight: 400;
+  font-weight: $base-font-weight;
   background-color: darken($gray-darkest, 5);
   border-radius: $base-border-radius;
   pre {
@@ -122,7 +122,7 @@
 // Generic.Strong
 
 .highlight .gs {
-  font-weight: bold;
+  font-weight: $base-font-weight-bold;
 }
 
 // Keyword.Constant

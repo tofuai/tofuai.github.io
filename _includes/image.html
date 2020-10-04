@@ -1,9 +1,18 @@
-<a href="{% asset '{{ include.path-detail }}' @path %}">
-  <img src="{% asset '{{ include.path }}' @path %}" alt="{{ include.alt }}" class="zooming"
-    data-rjs="{% asset '{{ include.path-detail }}' @path %}"
-    data-zooming-width="{{ assets[include.path-detail].dimensions.width }}"
-    data-zooming-height="{{ assets[include.path-detail].dimensions.height }}"
-  />
-</a>
-
-<figcaption>{{ include.caption }}</figcaption>
+<div class="figure">
+  <a href="{% asset '{{ include.path-detail }}' @path %}">
+    <img src="{% asset '{{ include.path }}' @path %}" alt="{{ include.alt }}" class="zooming"
+      data-rjs="{% asset '{{ include.path-detail }}' @path %}"
+      data-zooming-width="{{ assets[include.path-detail].dimensions.width }}"
+      data-zooming-height="{{ assets[include.path-detail].dimensions.height }}"
+    />
+  </a>
+  
+  
+  
+  <figcaption>
+    {{ include.caption }}
+    {% if include.source != null and include.source != "" %}
+     [<a href="{{ include.source }}">Source</a>]
+    {% endif %}
+  </figcaption>
+</div>
