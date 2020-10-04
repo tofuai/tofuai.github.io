@@ -81,6 +81,10 @@ h6 {
 }
 
 @include breakpoint(small) {
+  .article-content {
+    font-size: $base-font-size * 0.8;
+  }
+  .block
   h1 {
     font-size: $base-font-size * 1.5;
   }
