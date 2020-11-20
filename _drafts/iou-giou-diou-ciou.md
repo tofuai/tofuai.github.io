@@ -27,7 +27,7 @@ tags: [deep-learning, computer-vision]
 
 
 {% katexmm %}
-Một lựa chọn phổ biến cho hàm mất mát đối với bài toán Bounding Box Regression là sử dụng $l_{n}$ loss để đánh giá sai số giữa Bounding Box dự đoán và nhãn. Tuy nhiên, $l_{n}$ loss không có tính bất biến với các kích cỡ bounding box khác nhau (bounding box to sẽ có loss lớn hơn nhiều so với bounding box bé). Trong YOLO-v1, nhóm tác giả đã sử dụng căn bậc hai cho chiều dài và chiều rộng để giảm thiểu tình trạng này.
+Một lựa chọn phổ biến cho hàm mất mát đối với bài toán Bounding Box Regression là sử dụng $l_{n}$ loss để đánh giá sai số giữa Bounding Box dự đoán và nhãn. Tuy nhiên, $l_{n}$ loss không có tính bất biến với các kích cỡ bounding box khác nhau (bounding box to sẽ có $l_{n}$ loss lớn hơn nhiều so với bounding box bé). Trong YOLO-v1, nhóm tác giả đã sử dụng căn bậc hai cho chiều dài và chiều rộng để giảm thiểu tình trạng này.
 {% endkatexmm %}
 
 {% include image.html path="iou-giou-diou-ciou/yolo-v1-loss.png" path-detail="iou-giou-diou-ciou/yolo-v1-loss.png" alt="YOLOv1 Loss" caption="Hàm mất mát của YOLO-v1." source="https://arxiv.org/pdf/1506.02640.pdf" %}
@@ -44,19 +44,21 @@ $IoU = \frac{\lvert B \cap B^{gt} \rvert }{\lvert B \cup B^{gt} \rvert}$
 {% endkatexmm %}
 </div>
 
-<div class="formular">
 {% katexmm %}
-$IoU = \frac{\lvert B \cap B^{gt} \rvert }{\lvert B \cup B^{gt} \rvert}$
+IoU được tính toán dựa trên tỷ lệ giữa phần diện tích trùng nhau chia cho phần diện tích hợp nhất của 2 bounding box. Do đó, IoU hoàn toàn bất biến đối với kích thước của vật thể khi so sánh. Ngoài ra, việc sử dụng IoU loss thay cho $l_{n}$ giúp mô hình đạt kết quả tối ưu trên metric IoU hơn.
 {% endkatexmm %}
-</div>
 
 <div class="formular">
 {% katexmm %}
-$\mathcal{L}_{IoU} = 1 - \frac{\lvert B \cap B^{gt} \rvert }{\lvert B \cup B^{gt} \rvert}$
+$\mathcal{L}_{IoU} = 1 - IoU$
 {% endkatexmm %}
 </div>
+
+Tuy nhiên, IoU loss chỉ hoạt động khi hai bounding box chồng lên nhau, và không làm gradient dịch chuyển trong trường hợp không chồng lên nhau. Để giải quyết vấn đề này, chúng ta đến với một phiên bản nâng cấp hơn, Generalize-IoU (GIoU).
 
 ## 3. Generalize-IoU
+
+Công thức của GIoU được mô tả như sau:
 
 <div class="formular">
 {% katexmm %}
@@ -64,10 +66,18 @@ $\mathcal{L}_{GIoU} = 1 - IoU + \frac{\lvert C - B \cap B^{gt} \rvert }{\lvert C
 {% endkatexmm %}
 </div>
 
+{% katexmm %}
+Trong đó, $C$ là bounding box bé nhất bao quanh $B$ và $B^{gt}$. Nhờ việc tính toán thêm dựa trên phần diện tích bao quanh 2 bounding box, ta có thể tránh được hiện tượng gradient vanishing đối với trường hợp 2 bounding box không chồng lên nhau.
+{% endkatexmm %}
+
+Tuy nhiên, khi sử dụng GIoU, mô hình lại gặp phải vấn đề hội tụ chậm và có đánh giá về vị trí không hiệu quả trong các trường hợp sau:
+
 {% include image.html path="iou-giou-diou-ciou/giou-diou.png" path-detail="iou-giou-diou-ciou/giou-diou.png" alt="GIoU Loss vs. DIoU Loss" caption="GIoU Loss có giá trị tương đương với IoU loss trong các trường hợp này, trong khi DIoU vẫn có sự khác biêt. Màu xanh và đỏ thể hiện cho bounding box nhãn và bounding dự đoán." source="https://arxiv.org/pdf/1911.08287.pdf" %}
 
 
 ## 4. Distance-IoU
+
+Khác với GIoU, DIoU thêm phần tính toán dựa vào khoảng cách tâm thay vì diện tích:
 
 <div class="formular">
 {% katexmm %}
@@ -75,8 +85,15 @@ $\mathcal{L}_{DIoU} = 1 - IoU + \frac{\mathcal{p}^2(b, b^{gt})}{c^2}$
 {% endkatexmm %}
 </div>
 
+{% katexmm %}
+Trong đó $b$ và $b_{gt}$ là tâm của hai bounding box $B$ và $B_{gt}$, $\mathcal{p}(.)$ là khoảng cách Euclidean, và $c$ là độ dài đường chéo của bounding box $C$, bounding box bé nhất bao quanh $B$ và $B^{gt}$. 
+{% endkatexmm %}
+
 {% include image.html path="iou-giou-diou-ciou/diou-distance-center.png" path-detail="iou-giou-diou-ciou/diou-distance-center.png" alt="DIoU Loss" caption="DIoU Loss cho bài toán Bounding Box Regression, thu nhỏ khoảng cách giữa tâm của bounding box dự đoán và tâm của bounding box nhãn." source="https://arxiv.org/pdf/1911.08287.pdf" %}
 
+Trong khi GIoU loss có xu hướng mở rộng diện tích của bounding box dự đoán để tạo ra vùng chồng nhau trước, rồi sau đó tối ưu dựa trên tham số IoU. DIoU loss lại trực tiếp thu nhỏ khoảng cách tâm giữa 2 bounding box, giúp cho việc hội tụ diễn ra nhanh hơn.
+
+{% include image.html path="iou-giou-diou-ciou/giou-diou-converge.png" path-detail="iou-giou-diou-ciou/giou-diou-converge.png" alt="DIoU Loss" caption="Tiến trình bounding box regression tạo bởi GIoU loss (hàng đầu tiên) và DIoU loss (hàng thứ hai). Màu xanh và đen thể hiện cho box nhãn và box anchor. Màu xanh và đỏ thể hiện cho box dự đoán bởi GIoU và DIoU. GIoU loss có xu hướng tăng diện tích của box dự đoán cho đến khi chồng lên box nhãn. Trong khi DIoU trực tiếp thu nhỏ khoảng cách tâm của box dự đoán và box nhãn." source="https://arxiv.org/pdf/1911.08287.pdf" %}
 
 
 ## 5. Complete-IoU
