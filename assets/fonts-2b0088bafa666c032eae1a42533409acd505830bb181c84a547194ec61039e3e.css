@@ -1,0 +1,30 @@
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: normal;
+  font-weight: 700;
+  src: url(/assets/cormorant-garamond/Cormorant-Garamond-700-51c2c6f5b44e53050c44900ba708701e37e8a3060bef8b2ada62721bc1ad8b6a.eot);
+  src: url(/assets/cormorant-garamond/Cormorant-Garamond-700-51c2c6f5b44e53050c44900ba708701e37e8a3060bef8b2ada62721bc1ad8b6a.eot#iefix) format("embedded-opentype"), local("Cormorant Garamond Bold"), local("Cormorant-Garamond-700"), url(/assets/cormorant-garamond/Cormorant-Garamond-700-fded23c4b1698170c6e69f76e94ee8fd2655787e19d4b04e16257db322d36ef8.woff2) format("woff2"), url(/assets/cormorant-garamond/Cormorant-Garamond-700-218f613b673b2ed4d3621983c6f5bee31c7b08e7f0bfb5861afbc5991e57f7ff.woff) format("woff"), url(/assets/cormorant-garamond/Cormorant-Garamond-700-b2936c7e380cb7c6dbc62ac24304f7c5b97f1770c7a98c6769b5442f6586da7a.ttf) format("truetype"); }
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 300;
+  src: url(/assets/open-sans/Open-Sans-300-ecb5f332ce22c5376edc3abbc3002c2715d6e289f8c4432a8c945fb81e7d57a6.eot);
+  src: url(/assets/open-sans/Open-Sans-300-ecb5f332ce22c5376edc3abbc3002c2715d6e289f8c4432a8c945fb81e7d57a6.eot#iefix) format("embedded-opentype"), local("Open Sans Light"), local("Open-Sans-300"), url(/assets/open-sans/Open-Sans-300-7340c9e7bccfc0a5e63a856e7f6af4e3ad1bea2e68327682691178fccdc3f8ca.woff2) format("woff2"), url(/assets/open-sans/Open-Sans-300-c14dfb8828fdbfa5826a831cb4d5241c76c1fe747d9a89956dc66a2312a07b46.woff) format("woff"), url(/assets/open-sans/Open-Sans-300-859e7187c9b040369ed0c5d442f50429d7708a8f7307692c01b7df64afc3e240.ttf) format("truetype"); }
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: url(/assets/open-sans/Open-Sans-regular-cf1285d00733925266d89b269215df324ef473d1dece9ed16108902b0a1c8fd9.eot);
+  src: url(/assets/open-sans/Open-Sans-regular-cf1285d00733925266d89b269215df324ef473d1dece9ed16108902b0a1c8fd9.eot#iefix) format("embedded-opentype"), local("Open Sans Regular"), local("Open-Sans-regular"), url(/assets/open-sans/Open-Sans-regular-c740f793ab5bd3e1fcec9a7dbf70cfc067e4bb399795a0d3d8a56fde0e217e0a.woff2) format("woff2"), url(/assets/open-sans/Open-Sans-regular-ca0914e6306814120ce484e71f195c1dc0b7b9ff10d9b8c242d87e67766ce2d0.woff) format("woff"), url(/assets/open-sans/Open-Sans-regular-658b76eb2f9929930037d3b74c390a2532a851a8345cfa6f80e516df8964497e.ttf) format("truetype"); }
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 600;
+  src: url(/assets/open-sans/Open-Sans-600-13e7bb19b05ebe825ce94cd26f2b8df8ab2b93fce9611f29ed3f604d1ac06375.eot);
+  src: url(/assets/open-sans/Open-Sans-600-13e7bb19b05ebe825ce94cd26f2b8df8ab2b93fce9611f29ed3f604d1ac06375.eot#iefix) format("embedded-opentype"), local("Open Sans Bold"), local("Open-Sans-600"), url(/assets/open-sans/Open-Sans-600-065b7758397344233d28d976a4e1e1d17e2c74bfabd93ced349f5f13521bc8f4.woff2) format("woff2"), url(/assets/open-sans/Open-Sans-600-db39e67843a144938b7843314b28b2de8ba523a782da649296f54fbe225d2067.woff) format("woff"), url(/assets/open-sans/Open-Sans-600-86f4a270b16eb4ea5b8903b8e094d669899835b28fc116822bc0a0b629c55dd3.ttf) format("truetype"); }
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: url(/assets/open-sans/Open-Sans-700-32b2ac663f5bf672e98eaf15426136cc71efc552f136ad87186eac15caccb44e.eot);
+  src: url(/assets/open-sans/Open-Sans-700-32b2ac663f5bf672e98eaf15426136cc71efc552f136ad87186eac15caccb44e.eot#iefix) format("embedded-opentype"), local("Open Sans Bold"), local("Open-Sans-700"), url(/assets/open-sans/Open-Sans-700-1f5dcb5af7f95160ed0fe7657eef7110766a5b93f25c1bd2ad39e5b17adb2c54.woff2) format("woff2"), url(/assets/open-sans/Open-Sans-700-a15c5a4927bebba03afa1aab82b8aa211f3d9089337341f9d608b67445dc73b1.woff) format("woff"), url(/assets/open-sans/Open-Sans-700-ee993568e326cfd200adebecdf6e178659a38134d19f52eaf343e6ce3d272eba.ttf) format("truetype"); }
